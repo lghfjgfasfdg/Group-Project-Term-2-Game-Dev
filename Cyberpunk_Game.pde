@@ -29,8 +29,10 @@ void draw() {
 
 
 void startScreen() {
- loadImage("Start.jpg");
-  if (mousePressed);{
-   loadImage("Start.jpg"); 
+  image(Start, x, y);
+  if (mousePressed);
+  {
+      loadImage("Start.jpg");
+
   }
 }
