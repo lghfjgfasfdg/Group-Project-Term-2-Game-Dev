@@ -6,5 +6,6 @@ description - this is a futuristic 2 d platformer working with some projectile m
 timeline - charles k
 readme - both
 
-timeline
+timeline-
+
 ![timeline] (https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cyberpunk.png)
