@@ -6,12 +6,12 @@ description - this is a futuristic 2 d platformer working with some projectile m
 
 timeline - charles k
 
-![timeline] (https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cyberpunk.png)
+![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cyberpunk.png)
 
 Start Screen and Game Over - Lucas Pinon
 
-![timeline] (https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cystart.png)
+![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cystart.png)
 
-![timeline] (https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/tdavid.png)
+![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/tdavid.png)
 
 Current Code (src)-(https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/tree/main/src)
