@@ -1,5 +1,5 @@
 # Group-Project-Term-2-Game-Dev
-Temp Name Futuristic 2d platformer
+Temp Name cygame
 
 description - this is a futuristic 2 d platformer working with some projectile mechanics and other such things with tiny bits of inspertion artistically from cyberpunk
 
