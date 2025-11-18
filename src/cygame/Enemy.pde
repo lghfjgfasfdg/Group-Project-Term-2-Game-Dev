@@ -1,26 +1,40 @@
-  class Enemy {
-      //  Variables
-      float x;
-      float y;
-      float diameter;
-      color c;
+class Enemy {
+  float x, y;
+  float diameter;
+  float vx, vy;     // velocity
+  color c;
 
-      // Constructor
-      Enemy(float tempX, float tempY, float tempD, color tempC) {
-        x = tempX;
-        y = tempY;
-        diameter = tempD;
-        c = tempC;
-      }
+  Enemy(float x_, float y_, float d_, color c_) {
+    x = x_;
+    y = y_;
+    diameter = d_;
+    c = c_;
+    vx = random(-2, 2);
+    vy = random(-2, 2);
+  }
 
-      // Methods
-      void display() {
-        fill(c);
-        ellipse(x, y, diameter, diameter);
-      }
+  void update() {
+    x += vx;
+    y += vy;
 
-      void move() {
-        x += random(-1, 1); // Simple movement example
-        y += random(-1, 1);
-      }
+    // Bounce on walls
+    if (x < diameter/2 || x > width - diameter/2) { 
+      vx *= -1;
     }
+    if (y < diameter/2 || y > height - diameter/2) {
+      vy *= -1;
+    }
+  }
+
+  void display() {
+    fill(c);
+    noStroke();
+    ellipse(x, y, diameter, diameter);
+  }
+
+  boolean collidesWith(Robot r) {
+    float d = dist(x, y, r.x, r.y);
+    return d < (diameter/2 + r.x/2);
+  }
+}
+
