@@ -1,6 +1,7 @@
 class Enemy {
   float x, y;
   float diameter;
+  float rdiameter;
   float vx, vy;     // velocity
   color c;
 
@@ -18,7 +19,7 @@ class Enemy {
     y += vy;
 
     // Bounce on walls
-    if (x < diameter/2 || x > width - diameter/2) { 
+    if (x < diameter/2 || x > width - diameter/2) {
       vx *= -1;
     }
     if (y < diameter/2 || y > height - diameter/2) {
@@ -32,9 +33,13 @@ class Enemy {
     ellipse(x, y, diameter, diameter);
   }
 
-  boolean collidesWith(Robot r) {
-    float d = dist(x, y, r.x, r.y);
-    return d < (diameter/2 + r.x/2);
-  }
+ boolean collidesWith(Robot r) {
+  float enemyRadius = diameter / 2;
+  float robotRadius = 20; // adjust to your robot drawing
+  float d = dist(x, y, r.x, r.y);
+
+  return d < enemyRadius + robotRadius;
+}
+}
 }
 
