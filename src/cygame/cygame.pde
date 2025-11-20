@@ -49,7 +49,7 @@ void draw() {
 }
 
 
-  // START SCREEN
+  // START SCREEN | Charles
 
 void drawStartScreen() {
   background(0);
@@ -62,7 +62,7 @@ void drawStartScreen() {
 }
 
 
-  // PLAY SCREEN
+  // PLAY SCREEN - Charles
 
 void drawPlayScreen() {
   background(171);
@@ -79,6 +79,8 @@ void drawPlayScreen() {
  smasher.update();
   smasher.display();
 }
+
+// Gameover - Lucas
 
 void drawGameOverScreen() {
   background(30);
