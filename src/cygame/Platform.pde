@@ -1,4 +1,3 @@
-//lucas
 class Platform {
   int x, y, w, h;
   float xVel; // Horizontal velocity for movement
@@ -17,7 +16,7 @@ class Platform {
   // Update platform position
   void update() {
     x += xVel;
-    
+
     // Loop across screen
     if (xVel > 0) { // Moving right
       if (x - w/2 > width) {
