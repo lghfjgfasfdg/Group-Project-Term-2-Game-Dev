@@ -1,19 +1,28 @@
-// Lucas/Charles | November 4 2025 |
+//Lucas/Charles | November 4 2025 |
 
-char screen = 's';  // 's' = start, 'p' = play
+PImage bg;
+float x = 0;
+char screen = 's';
 Button btnStart, btnMenu;
 Robot blub;
 Enemy smasher;
 ArrayList<Platform> platforms;
 PImage sc;
+
+final float BG_SCALE = 0.448;
+
 void setup() {
   size(500, 500);
+  bg = loadImage("Background.png");
   frameRate(60);
-  //PImage("bacground.png");
+
+  int buttonWidth = 160;
+  int buttonX = (width / 2) - (buttonWidth / 2);
+
   blub = new Robot(width/2, height - 25, color(0, 234, 124));
   sc = loadImage ("cystart.png");
-  btnStart = new Button("PLAY", 170, 250, 160, 50);
-  btnMenu  = new Button("MENU", 170, 320, 160, 50);
+  btnStart = new Button("PLAY", buttonX, 250, buttonWidth, 50);
+  btnMenu  = new Button("MENU", buttonX, 320, buttonWidth, 50);
   smasher = new Enemy(250, 100, 40, color(255, 0, 0));
 
   platforms = new ArrayList<Platform>();
@@ -21,46 +30,50 @@ void setup() {
 }
 
 void draw() {
-  background(171);
+  background(135, 206, 255);
+
+  image(bg, x, 0, bg.width * BG_SCALE, height);
+  image(bg, x + bg.width * BG_SCALE, 0, bg.width * BG_SCALE, height);
+  x -= 1;
+
+  if (x < -bg.width * BG_SCALE) {
+    x = 0;
+  }
 
   switch (screen) {
   case 's':
     drawStartScreen();
     break;
-
   case 'p':
     drawPlayScreen();
     break;
-  
-
   case 'g':
     drawGameOverScreen();
     break;
   }
 }
 
-
-// START SCREEN
-
 void drawStartScreen() {
-  background(0);
-  image(sc, 0, 0, 500, 500);
+
+  image(sc, 0, 0, width, height);
+
   btnStart.display();
   btnMenu.display();
-
-  if (btnStart.clicked()) screen = 'p';
-  if (btnMenu.clicked()) println("Menu Button pressed");
 }
 
-
-// PLAY SCREEN
-
 void drawPlayScreen() {
-  background(171);
+
+  background(135, 206, 255);
+  image(bg, x, 0, bg.width * BG_SCALE, height);
+  image(bg, x + bg.width * BG_SCALE, 0, bg.width * BG_SCALE, height);
+  x -= 1;
+  if (x < -bg.width * BG_SCALE) {
+    x = 0;
+  }
+
 
   blub.update();
   blub.display();
-
   for (Platform p : platforms) {
     p.update();
     p.display();
@@ -71,6 +84,8 @@ void drawPlayScreen() {
     gameOver();
   }
 }
+
+
 void drawGameOverScreen() {
   background(30);
   fill(255);
@@ -79,19 +94,29 @@ void drawGameOverScreen() {
   text("GAME OVER", width/2, height/2 - 20);
 }
 
-
-
-// INPUT
-
 void keyPressed() {
   if (key == ' ') blub.jump();
   if (key == 'a') blub.move();
   if (key == 'd') blub.move();
 }
 
+
 void mousePressed() {
-  blub.jump();
+
+  if (screen == 's') {
+    if (btnStart.clicked()) {
+      screen = 'p';
+    }
+    if (btnMenu.clicked()) {
+      println("Menu Button pressed");
+    }
+  } else if (screen == 'p') {
+
+    blub.jump();
+  }
 }
+
 void gameOver() {
-  screen = 'g'; // game over screen
+  screen = 'g';
 }
+
