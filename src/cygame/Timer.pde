@@ -1,3 +1,4 @@
+// this was just taken from space game so 
 class Timer {
 
   int savedTime; // When Timer started
