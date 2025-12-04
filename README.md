@@ -13,8 +13,8 @@ lucas p - coding and class diagram.
 
 ![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/tdavid.png)
 
-Start Screen <img width="1389" height="1389" alt="cystart" src="https://github.com/user-attachments/assets/754f013a-5e74-44ff-8f5e-001176ea6ded" />
-lucas p
+Start Screen - lucas p <img width="1389" height="1389" alt="cystart" src="https://github.com/user-attachments/assets/754f013a-5e74-44ff-8f5e-001176ea6ded" />
+
 
 
 Current Code (src)-(https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/tree/main/src)
