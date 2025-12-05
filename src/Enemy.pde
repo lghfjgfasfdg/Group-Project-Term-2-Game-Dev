@@ -6,6 +6,7 @@ class Enemy {
   color c;
   boolean flipped = false;
   PImage drone;
+int Cooldown;
 
   Enemy(float x_, float y_, float d_, color c_) {
     x = x_;
@@ -15,6 +16,9 @@ class Enemy {
     vx = random(-2, 2);
     vy = random(-2, 2);
     drone = loadImage("drone.png");
+    Cooldown = 0;
+      
+
   }
 
   void update() {
@@ -23,13 +27,13 @@ class Enemy {
 
     float r = diameter / 2;
 
-    // Bounce left/right 
+    // Bounce on left/right walls
     if (x < r || x > width - r) {
       vx *= -1;
       flipped = !flipped;
     }
 
-    // Bounce up/down 
+    // Bounce on top/bottom walls
     if (y < r || y > height - r) {
       vy *= -1;
     }
@@ -49,6 +53,9 @@ class Enemy {
 
     popMatrix();
   }
+  void shoot() {
+  
+  }
 
   boolean collidesWith(Robot r) {
     float enemyRadius = diameter / 2;
@@ -57,3 +64,4 @@ class Enemy {
     return d < enemyRadius + robotRadius;
   }
 }
+
