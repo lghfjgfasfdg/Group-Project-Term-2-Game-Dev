@@ -5,11 +5,11 @@ Description - you are blub an aspireing robot trying to escape the city you gott
 
 Charles K - timeline, and concept art, and coding.
 
-Lucas P - coding and class diagram.
+Lucas P - coding and class diagram, concept art .
 
 ![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cyberpunk.png)
 
-![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/cystart.png)
+![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/drone.png)
 
 blub - Charles k![timeline](https://github.com/lghfjgfasfdg/Group-Project-Term-2-Game-Dev/blob/main/timeline/tdavid.png)
 
