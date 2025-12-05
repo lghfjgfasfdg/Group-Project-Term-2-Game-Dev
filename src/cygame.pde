@@ -6,7 +6,7 @@ Robot blub;
 Enemy smasher;
 ArrayList<Platform> platforms;
 ArrayList<Projectile> projectiles;
-PImage startscreem;
+PImage sc;
 PImage bg;
 PImage go;
 float x =0;
@@ -15,7 +15,7 @@ void setup() {
   frameRate(60);
   //PImage("bacground.png");
   blub = new Robot(width/2, height - 25, color(0, 234, 124));
-  startscreen = loadImage ("cystart.png");
+  sc = loadImage ("cystart.png");
   btnStart = new Button("PLAY", 170, 250, 160, 50);
   btnMenu  = new Button("MENU", 170, 320, 160, 50);
   smasher = new Enemy(250, 100, 40, color(255, 0, 0));
@@ -61,7 +61,7 @@ void draw() {
 //ck
 void drawStartScreen() {
   background(0);
-  image(startscreen, 0, 0, 500, 500);
+  image(sc, 0, 0, 500, 500);
   btnStart.display();
   btnMenu.display();
 
@@ -85,24 +85,8 @@ void drawPlayScreen() {
   p.update();
   p.display();
 
-// - FINISH LATER - projectle func 
-  //if (!p.alive) {
-   // projectiles.remove(i);
-  //}
- // for (int i = blub.size() - 1; i >= 0; i--) {
-  //Projectile p = blub.get(i);
 
-  //for (int j = blub .size() - 1; j >= 0; j--) {
-   // Enemy e = blub.get(j);
-
-   // if (p.hits(e)) {
-     // gameover(); 
-//JANK ENDS HERE
-    }
   
-
-
-
 
 
   blub.update();
@@ -117,7 +101,29 @@ void drawPlayScreen() {
   if (smasher.collidesWith(blub)) {
     gameOver();
   }
-}
+  //for (Enemy e : enemies) {
+ // e.update();
+ // e.display();
+
+ // PAUSE |  this part is really jank and doesnt work this was just hopes and dreams trying to get this to work 
+  //if (e.Cooldown == 0) {
+   // float angle = atan2(blub.y - e.y, blub.x - e.x);
+    //float speed = 4;
+
+  //  projectiles.add(new Projectile(
+   //   e.x,
+   //   e.y,
+    //  cos(angle)*speed,
+     // sin(angle)*speed
+ //   ));
+
+   // e.Cooldown = 60;
+  //}
+  //weird jank stuff that doesnt work ends here | CONT 
+  }
+  }
+
+
 void drawGameOverScreen() {
  //ck
   image(go,width/2, height/2);
@@ -145,5 +151,5 @@ void mousePressed() {
   blub.jump();
 }
 void gameOver() {
-  screen = 'g'; // game over screen
+  screen = 'g'; // sends to game over screen | NOT ACTUAL SCREEN
 }
