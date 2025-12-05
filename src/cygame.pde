@@ -81,9 +81,9 @@ void drawPlayScreen() {
   if (x<=-bg.width)x=0;
   
   for (int i = projectiles.size()-1; i >= 0; i--) {
-  Projectile p =projectiles .get(i);
-  p.update();
-  p.display();
+  Projectile pr =projectiles .get(i);
+  pr.update();
+  pr.display();
 
 
   
