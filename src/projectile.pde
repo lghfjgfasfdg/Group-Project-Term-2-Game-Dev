@@ -1,8 +1,10 @@
+// NOTE|This class is kind of justy testing the waters in its currennt state 
+
 class Projectile {
   float x, y;
   float vx, vy;
   float size = 8;
-  boolean alive = true;
+  boolean live = true;
 
   Projectile(float x_, float y_, float vx_, float vy_) {
     x = x_;
@@ -14,24 +16,11 @@ class Projectile {
   void update() {
     x += vx;
     y += vy;
-
-    // Remove bullet if off-screen
-    if (x < 0 || x > width || y < 0 || y > height) {
-      alive = false;
-    }
+    if (x < 0 || x > width || y < 0 || y > height) live = false;
   }
 
   void display() {
-    fill(255, 200, 50);
-    noStroke();
+    fill(255, 50, 50); 
     ellipse(x, y, size, size);
-  }
-
-  boolean hits(Robot e) {
-     float robotRadius = 20; 
-     float projectileRadius = 3;
-    float d = dist(x, y, e.x, e.y);
-  
-    return d < projectileRadius + robotRadius ;
   }
 }
