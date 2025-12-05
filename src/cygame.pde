@@ -5,6 +5,7 @@ Button btnStart, btnMenu;
 Robot blub;
 Enemy smasher;
 ArrayList<Platform> platforms;
+ArrayList<Projectile> projectiles;
 PImage sc;
 PImage bg;
 PImage go;
@@ -20,12 +21,13 @@ void setup() {
   smasher = new Enemy(250, 100, 40, color(255, 0, 0));
   bg = loadImage("Background.png");
   go = loadImage("endblub.png");
+  projectiles = new ArrayList<Projectile>();
   platforms = new ArrayList<Platform>();
   platforms.add(new Platform(200, 200, 100, 20, 2));
 }
 
 void draw() {
-  //ck
+  
   background(171);
 
   switch (screen) {
@@ -74,9 +76,34 @@ void drawPlayScreen() {
   background(171);
   image(bg, x, 0);
   image(bg, x+bg.width, 0);
-  bg.resize(1600,1000);
+  bg.resize(11600,1000);
   x-=1;
   if (x<=-bg.width)x=0;
+  
+  for (int i = projectiles.size()-1; i >= 0; i--) {
+  Projectile p =projectiles .get(i);
+  p.update();
+  p.display();
+
+// - FINISH LATER - projectle func 
+  //if (!p.alive) {
+   // projectiles.remove(i);
+  //}
+ // for (int i = blub.size() - 1; i >= 0; i--) {
+  //Projectile p = blub.get(i);
+
+  //for (int j = blub .size() - 1; j >= 0; j--) {
+   // Enemy e = blub.get(j);
+
+   // if (p.hits(e)) {
+     // gameover(); 
+//JANK ENDS HERE
+    }
+  
+
+
+
+
 
   blub.update();
   blub.display();
