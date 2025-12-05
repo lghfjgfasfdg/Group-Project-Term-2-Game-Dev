@@ -6,7 +6,7 @@ Robot blub;
 Enemy smasher;
 ArrayList<Platform> platforms;
 ArrayList<Projectile> projectiles;
-PImage sc;
+PImage startscreem;
 PImage bg;
 PImage go;
 float x =0;
@@ -15,7 +15,7 @@ void setup() {
   frameRate(60);
   //PImage("bacground.png");
   blub = new Robot(width/2, height - 25, color(0, 234, 124));
-  sc = loadImage ("cystart.png");
+  startscreen = loadImage ("cystart.png");
   btnStart = new Button("PLAY", 170, 250, 160, 50);
   btnMenu  = new Button("MENU", 170, 320, 160, 50);
   smasher = new Enemy(250, 100, 40, color(255, 0, 0));
@@ -61,7 +61,7 @@ void draw() {
 //ck
 void drawStartScreen() {
   background(0);
-  image(sc, 0, 0, 500, 500);
+  image(startscreen, 0, 0, 500, 500);
   btnStart.display();
   btnMenu.display();
 
